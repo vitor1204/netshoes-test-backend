@@ -1,9 +1,8 @@
 package com.netshoes.problems.problem1.impl;
 
-import org.hamcrest.core.IsEqual;
 import org.junit.Test;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class SearchVowelTest {
 
@@ -12,7 +11,7 @@ public class SearchVowelTest {
         String inputStream = "aAbBABacafe";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('e'));
+        assertEquals('e', output);
     }
 
     @Test
@@ -20,7 +19,7 @@ public class SearchVowelTest {
         String inputStream = "aAbBABacafeTE";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('e'));
+        assertEquals('e', output);
     }
 
     @Test
@@ -28,7 +27,7 @@ public class SearchVowelTest {
         String inputStream = "a";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('0'));
+        assertEquals('0', output);
     }
 
     @Test
@@ -37,7 +36,7 @@ public class SearchVowelTest {
         String inputStream = "c";
         StreamImpl input = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(input);
-        assertThat(output, IsEqual.equalTo('0'));
+        assertEquals('0', output);
     }
 
     @Test
@@ -45,7 +44,7 @@ public class SearchVowelTest {
         String inputStream = "ac";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('0'));
+        assertEquals('0', output);
     }
 
     @Test
@@ -53,7 +52,7 @@ public class SearchVowelTest {
         String inputStream = "xafeAbBABcfIeKI";
         StreamImpl input = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(input);
-        assertThat(output, IsEqual.equalTo('0'));
+        assertEquals('0', output);
     }
 
     @Test
@@ -61,7 +60,7 @@ public class SearchVowelTest {
         String inputStream = "aAbBABacafesi";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('e'));
+        assertEquals('e', output);
     }
 
     @Test
@@ -69,7 +68,7 @@ public class SearchVowelTest {
         String inputStream = "aAbBABacafesa";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('e'));
+        assertEquals('e', output);
     }
 
     @Test
@@ -77,7 +76,7 @@ public class SearchVowelTest {
         String inputStream = "afeaAbBABacafIe";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('I'));
+        assertEquals('I', output);
     }
 
     @Test
@@ -85,7 +84,7 @@ public class SearchVowelTest {
         String inputStream = "afe)aAb!BA&Ba(cafIe";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('I'));
+        assertEquals('I', output);
     }
 
     @Test
@@ -93,7 +92,7 @@ public class SearchVowelTest {
         String inputStream = "ifAgahA";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('a'));
+        assertEquals('a', output);
     }
 
     @Test
@@ -101,6 +100,6 @@ public class SearchVowelTest {
         String inputStream = "ifagAha";
         StreamImpl streamImpl = new StreamImpl(inputStream);
         char output = SearchVowel.firstChar(streamImpl);
-        assertThat(output, IsEqual.equalTo('A'));
+        assertEquals('A', output);
     }
 }

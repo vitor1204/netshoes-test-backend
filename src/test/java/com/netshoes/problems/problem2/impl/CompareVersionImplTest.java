@@ -11,9 +11,9 @@ public class CompareVersionImplTest {
         final String versionOne = "1.2";
         final String versionTwo = "1.1";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 1);
+        assertEquals(1, output);
     }
 
     @Test
@@ -21,9 +21,9 @@ public class CompareVersionImplTest {
         final String versionOne = "1.2";
         final String versionTwo = "1.3";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, -1);
+        assertEquals(-1, output);
     }
 
     @Test
@@ -31,19 +31,19 @@ public class CompareVersionImplTest {
         final String versionOne = "1.1";
         final String versionTwo = "1.1";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 0);
+        assertEquals(0, output);
     }
 
     @Test
-    public void shouldReturn1_1_1_2_3_4_5Equals1_1_1_2_3_4_5() {
+    public void shouldReturn1_1_1_2_3_4_5Equals() {
         final String versionOne = "1.1.1.2.3.4.5";
         final String versionTwo = "1.1.1.2.3.4.5";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 0);
+        assertEquals(0, output);
     }
 
     @Test
@@ -51,9 +51,9 @@ public class CompareVersionImplTest {
         final String versionOne = "2.10.115.2.3";
         final String versionTwo = "2.10.115.2.3";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 0);
+        assertEquals(0, output);
     }
 
     @Test
@@ -61,9 +61,9 @@ public class CompareVersionImplTest {
         final String versionOne = "1.1.1";
         final String versionTwo = "1.1";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 1);
+        assertEquals(1, output);
     }
 
     @Test
@@ -71,9 +71,9 @@ public class CompareVersionImplTest {
         final String versionOne = "10.1.20.10.2.3.4";
         final String versionTwo = "10.1.20.10.2.3.2";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 1);
+        assertEquals(1, output);
     }
 
     @Test
@@ -81,42 +81,42 @@ public class CompareVersionImplTest {
         final String versionOne = "10.1.20.50.2.3.4";
         final String versionTwo = "10.1.20.10.2.3.4";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 1);
+        assertEquals(1, output);
     }
 
     @Test
-    public void shouldReturn1_1_1_1_2_3_3IsLessThan1_1_1_1_2_3_2() {
+    public void shouldReturn1_1_1_1_2_3_4IsLessThan1_1_1_1_2_3_2() {
         final String versionOne = "1.1.1.1.2.3.4";
         final String versionTwo = "1.1.1.1.2.3.2";
 
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
 
-        assertEquals(expectedOutput, 1);
+        assertEquals(1, output);
     }
 
     @Test
     public void shouldReturn1_0IsEqualsTo1() {
         final String versionOne = "1";
         final String versionTwo = "1.0";
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
-        assertEquals(expectedOutput, 0);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(0, output);
     }
 
     @Test
     public void shouldReturn5IsEqualsTo5_0_0_0_0() {
         final String versionOne = "5";
         final String versionTwo = "5.0.0.0.0";
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
-        assertEquals(expectedOutput, 0);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(0, output);
     }
 
     @Test
     public void shouldReturn1_2IsLessThan2_1() {
         final String versionOne = "1.2";
         final String versionTwo = "2.1";
-        int expectedOutput = CompareVersionImpl.compareVersion(versionOne, versionTwo);
-        assertEquals(expectedOutput, -1);
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(-1, output);
     }
 }
