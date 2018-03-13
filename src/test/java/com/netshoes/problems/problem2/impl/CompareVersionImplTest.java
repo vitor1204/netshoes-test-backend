@@ -119,4 +119,44 @@ public class CompareVersionImplTest {
         int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
         assertEquals(-1, output);
     }
+
+    @Test
+    public void shouldReturn0_1_2_2470_2IsLessThan1_2_1() {
+        final String versionOne = "0.1.2.2470.2";
+        final String versionTwo = "1.2.1";
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(-1, output);
+    }
+
+    @Test
+    public void shouldReturn0_1_2_2470_2IsGreaterThan0_0_1_1_1() {
+        final String versionOne = "0.1.2.2470.2";
+        final String versionTwo = "0.0.1.1.1";
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(1, output);
+    }
+
+    @Test
+    public void shouldReturn0_1_2_2470_0_0_2IsGreaterThan0_0_1_1_1() {
+        final String versionOne = "0.1.2.2470.0.0.2";
+        final String versionTwo = "0.0.1.1.1";
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(1, output);
+    }
+
+    @Test
+    public void shouldReturn0_0_0_0_01_2_2470_0_0_2IsGreaterThan0_0_0_0_1_1_1() {
+        final String versionOne = "0.0.0.0.01.2.2470.0.0.2";
+        final String versionTwo = "0.0.0.0.1.1.1";
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(1, output);
+    }
+
+    @Test
+    public void shouldReturn00_0_0_00_010_2_2470_0_00_2Equals() {
+        final String versionOne = "00.0.0.00.010.2.2470.0.00.2";
+        final String versionTwo = "0.00.0.00.10.2.2470.00.0.2";
+        int output = CompareVersionImpl.compareVersion(versionOne, versionTwo);
+        assertEquals(0, output);
+    }
 }
