@@ -87,7 +87,7 @@ public class CompareVersionImplTest {
     }
 
     @Test
-    public void shouldReturn1_1_1_1_2_3_4IsLessThan1_1_1_1_2_3_2() {
+    public void shouldReturn1_1_1_1_2_3_4IsGreaterThan1_1_1_1_2_3_2() {
         final String versionOne = "1.1.1.1.2.3.4";
         final String versionTwo = "1.1.1.1.2.3.2";
 
