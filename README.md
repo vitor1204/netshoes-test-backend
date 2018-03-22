@@ -36,12 +36,10 @@ Regras e orientações:
     ```sh
     mvn clean -Dtest=SearchVowelTest test 
     ```
-    <br />
     Para executar o maven embedded disponibilizado pela aplicação:
-     ```sh
-     ./mvnw clean -Dtest=SearchVowelTest test 
-     ```
-
+    ```sh
+    ./mvnw clean -Dtest=SearchVowelTest test 
+    ```
 ----------
 2. Serão informadas duas versões: version1 e version2. Com base nessas versões, deverá ser retornado:
 - 1 (um) caso a version1 for maior que a version2 (version1 > version2 return 1)
@@ -66,10 +64,10 @@ Regras e orientações:
      ```sh
      mvn clean -Dtest=CompareVersionImplTest test 
      ```
-    <br />
+     
     Para executar o maven embedded disponibilizado pela aplicação:
-      ```sh
-      ./mvnw clean -Dtest=CompareVersionImplTest test 
-      ```
+    ```sh
+    ./mvnw clean -Dtest=CompareVersionImplTest test 
+    ```
 
 ## Boa prova!
