@@ -103,7 +103,7 @@ public class SearchVowelTest {
         assertEquals('A', output);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void shouldReturn0WhenEmptyStream() {
         String inputStream = "";
         StreamImpl streamImpl = new StreamImpl(inputStream);
@@ -111,7 +111,7 @@ public class SearchVowelTest {
         assertEquals('0', output);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void shouldReturn0WhenStreamFilledWithEmptySpaces() {
         String inputStream = "  ";
         StreamImpl streamImpl = new StreamImpl(inputStream);
@@ -119,7 +119,7 @@ public class SearchVowelTest {
         assertEquals('0', output);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void shouldReturn0WhenStreamFilledWithNoContent() {
         String inputStream = null;
         StreamImpl streamImpl = new StreamImpl(inputStream);
