@@ -102,4 +102,25 @@ public class SearchVowelTest {
         char output = SearchVowel.firstChar(streamImpl);
         assertEquals('A', output);
     }
+
+    @Test(expected = RuntimeException.class)
+    public void shouldReturnErrorWhenEmptyStream() {
+        String inputStream = "";
+        StreamImpl streamImpl = new StreamImpl(inputStream);
+        char output = SearchVowel.firstChar(streamImpl);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void shouldReturnErrorWhenStreamFilledWithEmptySpaces() {
+        String inputStream = "  ";
+        StreamImpl streamImpl = new StreamImpl(inputStream);
+        char output = SearchVowel.firstChar(streamImpl);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void shouldReturnErrorWhenStreamFilledWithNoContent() {
+        String inputStream = null;
+        StreamImpl streamImpl = new StreamImpl(inputStream);
+        char output = SearchVowel.firstChar(streamImpl);
+    }
 }
