@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    tools {
+        maven 'maven-3.3.9'
+        jdk 'jdk1.8u121'
+    }
+    options {
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh "mvn clean package -DskipTests=true"
+            }
+        }
+        stage('Tests') {
+            failFast false
+            parallel {
+                stage('Problem 1') {
+                    steps {
+                        sh "mvn test -Dtest=com.netshoes.problems.problem1.impl.SearchVowelTest"
+                    }
+                }
+                stage('Problem 2') {
+                    steps {
+                        sh "mvn test -Dtest=com.netshoes.problems.problem2.impl.CompareVersionImplTest"
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            junit 'target/surefire-reports/**/*.xml'
+        }
+    }
+}
