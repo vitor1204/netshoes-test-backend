@@ -3,8 +3,13 @@
 ### Ao finalizar o teste, AGUARDE até que o time da Netshoes solicite para que cada um abra um Pull Request para que seu código seja disponibilizado e avaliado;
 
 
-1. Dada uma stream, encontre o primeiro caractere Vogal, após uma consoante, onde a mesma é antecessora a uma vogal e que não se repita no resto da stream. 
-O término da leitura da stream deve ser garantido através do método hasNext(), ou seja, retorna falso para o término da leitura da stream. <br />
+### Exercício 1 
+Encontre o primeiro caractere que: <br />
+- É uma vogal única na Stream
+- Está após uma consoante que está após qualquer vogal
+
+O término da leitura da stream deve ser garantido através do método hasNext(), ou seja, até que este método retorne falso.
+ <br />
 
 Exemplo 1: <br />
 Input:  aAbBABacafe <br />
@@ -41,7 +46,9 @@ Regras e orientações:
     ./mvnw clean -Dtest=SearchVowelTest test 
     ```
 ----------
-2. Serão informadas duas versões: version1 e version2. Com base nessas versões, deverá ser retornado:
+### Exercício 2
+
+Serão informadas duas versões: version1 e version2. Com base nessas versões, deverá ser retornado:
 - 1 (um) caso a version1 for maior que a version2 (version1 > version2 return 1)
 - 0 (zero) caso forem iguais (version1 == version2 return 0)
 - -1 (menos 1) caso a version1 for menor que a version2 (version1 < version2 return -1)
