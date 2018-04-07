@@ -33,7 +33,7 @@ public class SearchVowel {
     				atual == 'e' || atual == 'i' || atual == 'o' || atual == 'u') {
     			
 	    		for(int i2 = 0; i2 < caracters.length; i2++) {
-	    			if (atual == caracters[i2]) {
+	    			if (atual == caracters[i2]) { 
 	    				y = true;	
 	    			}
 	    		}		
